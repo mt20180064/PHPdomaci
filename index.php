@@ -1,32 +1,35 @@
 <?php
 
 require "dbBroker.php";
-require "gost.php";
+require "user.php";
 
 session_start();
+if(isset($_POST['username']) && isset($_POST['password'])){
+    $uname = $_POST['username'];
+    $upass = $_POST['password'];
 
-if (isset($_POST['username']) && isset($_POST['password'])){
-    $uname=$_POST['username'];
-    $upass=$_POST['password'];
-
-    $prijavljeni= new Gost(1,$uname,$upass);
-    $odgovor=Gost::ulogujSe($prijavljeni,$conn);
+   
+    $korisnik = new User(1, $uname, $upass);
     
+    $odg = User::ulogujSe($korisnik, $conn); 
 
-    if ($odgovor->num_rows==1){
-        echo `
+    if($odg->num_rows==1){
+        echo  `
         <script>
-        console.log("uspesno ste se prijavili!");
-        </script> `;
-        $_SESSION['gost_id'] = $prijavljeni->id;
+        console.log( "Uspešno ste se prijavili");
+        </script>
+        `;
+        $_SESSION['user_id'] = $korisnik->id;
         header('Location: pocetna.php');
         exit();
-    } else{
+    }else{
         echo `
         <script>
-        console.log("netacno korisnicko ili lozinka);
-        </script> ` ;
+        console.log( "Niste se prijavili!");
+        </script>
+        `;
     }
+
 }
 
 ?>
