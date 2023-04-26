@@ -22,12 +22,12 @@ session_start();
   <body>
     <nav class ="navbar">
         <div class="container">
-            <img class= "logo" src="dr.jpg", alt = "logo">
+            <img class= "logo" src="img\dr.jpg", alt = "logo">
             <ul class="nav">
             
                 <li><a href="index.php">Prijavljivanje</a></li>
                 <li><a href="#">Početna</a> 
-                <li><a href="#">Pregled rezervacija</a></li>
+                <li><a href="pregledrez.php">Pregled rezervacija</a></li>
                 
                 
             </ul>
