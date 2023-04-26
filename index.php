@@ -11,6 +11,7 @@ if (isset($_POST['username']) && isset($_POST['password'])){
 
     $prijavljeni= new Gost(1,$uname,$upass);
     $odgovor=Gost::ulogujSe($prijavljeni,$conn);
+    
 
     if ($odgovor->num_rows==1){
         echo `
