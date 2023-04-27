@@ -41,18 +41,21 @@ $rezultat=Rezervacija::getAll($conn);
     </nav>
 <h1>Postojece rezervacije</h1>
     
+<input type="text" id="ulaz" onkeyup="nadji()" placeholder="Pretraži rezervacije po imenu" >
+<br>
+</br>
 
     <div class="tabelarez" >
-        <table id="tabela" class="tabela" border="3" style=" background-color:rgb(90,90,90)">
+        <table id="tabela" class="tabela" border="3" style=" background-color:rgb(53, 54, 56)">
             <thead class ="zaglavlje">
             <tr >
-                <th scope="kolona" style="background-color:rgb(90,90,90) " >Gost</th>
-                <th scope="kolona" style="background-color:rgb(90,90,90) " >Sala</th>    
-                <th scope="kolona" style="background-color:rgb(90,90,90) " >Sto</th>
-                <th scope="kolona" style="background-color:rgb(90,90,90) " >Datum</th>
-                <th scope="kolona" style="background-color:rgb(90,90,90) " >Vreme</th>
-                <th scope="kolona" style="background-color:rgb(90,90,90) " >Broj ljudi</th>
-                <th scope="kolona" style="background-color:rgb(90,90,90) " >Prijavljeni korisnik</th>
+                <th scope="kolona" style="background-color:rgb(53, 54, 56) " >Gost</th>
+                <th scope="kolona" style="background-color:rgb(53, 54, 56) " >Sala</th>    
+                <th scope="kolona" style="background-color:rgb(53, 54, 56) " >Sto</th>
+                <th scope="kolona" style="background-color:rgb(53, 54, 56) " >Datum</th>
+                <th scope="kolona" style="background-color:rgb(53, 54, 56) " >Vreme</th>
+                <th scope="kolona" style="background-color:rgb(53, 54, 56) " >Broj ljudi</th>
+                <th scope="kolona" style="background-color:rgb(53, 54, 56) " >Prijavljeni korisnik</th>
             </tr>
             </thead>
             <tbody>
@@ -81,17 +84,18 @@ $rezultat=Rezervacija::getAll($conn);
                 
             </tbody>
         </table>
-        <div class="row" >
-            
-
-            
-            <div class="dugme1" >
+        <br>
+                  </br>
+                  
+        <div class="dugmici" >
+      
                     <button id="btn-obrisi" type="button" formmethod="post" class="btn btn-danger">UKLONI</button>
-                </div>
+                    <button id="uredi" class="btn_uredi" onclick="sortirajTabelu()">SORTIRAJ</button>
             
 
         </div>
-
+        <br>
+                  </br>
         <footer class="footer-distributed">
 
 <div class="footer-left">
@@ -146,5 +150,38 @@ $rezultat=Rezervacija::getAll($conn);
 </footer>
 
 </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+<script>
+
+        function sortirajTabelu() {
+            console.log("Pozvana");
+            var table, rows, s, i, a, b, shouldS;
+            table = document.getElementById("tabela");
+            s = true;
+
+            while (s) {
+                s = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldS = false;
+                    a = rows[i].getElementsByTagName("td")[1];
+                    b = rows[i + 1].getElementsByTagName("td")[1];
+                    if (a.innerHTML.toLowerCase() > b.innerHTML.toLowerCase()) {
+                        shouldS = true;
+                        break;
+                    }
+                }
+                if (shouldS) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    s = true;
+                }
+            }
+        }
+        </script>
+
 </body>
 </html>

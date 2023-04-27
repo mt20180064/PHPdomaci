@@ -68,7 +68,8 @@ button{
     height: 100%;
     margin-left: 20px;
     padding: 9px 25px;
-    background-color: rgba(240,248,255,1);
+    background-color: rgb(53, 54, 56);
+    color:rgba(240,248,255)
     border:none;
     border-padings:50px;
     border-radius:50px;
