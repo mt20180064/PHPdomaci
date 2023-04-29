@@ -343,5 +343,21 @@ button:hover{
 		margin-left: 0;
 	}
 
+    div.modal-content{
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        
+    }
+    
+    
+    #azurirajModal{
+       border-radius: 10px;
+        margin-left: 510px;
+        margin-top: 180px;
+       width: 440px;
+       height: 407px;
+       
+    }
 }
 

@@ -33,11 +33,12 @@ $rezultat=Rezervacija::getAll($conn);
                 <li><a href="index.php">Prijavljivanje</a></li>
                 <li><a href="pocetna.php">Početna</a> 
                 <li><a href="#">Pregled rezervacija</a></li>
+                <li><a href="dodaj.php">Napravi rezervaciju</a></li>
                 
                 
             </ul>
-<a class="btn" href="#"><button>Napravi rezervaciju</button></a>
-        </div>
+</div>
+
     </nav>
 <h1>Postojece rezervacije</h1>
     
@@ -96,6 +97,7 @@ $rezultat=Rezervacija::getAll($conn);
         </div>
         <br>
                   </br>
+                  
         <footer class="footer-distributed">
 
 <div class="footer-left">
@@ -168,8 +170,8 @@ $rezultat=Rezervacija::getAll($conn);
                 rows = table.rows;
                 for (i = 1; i < (rows.length - 1); i++) {
                     shouldS = false;
-                    a = rows[i].getElementsByTagName("td")[1];
-                    b = rows[i + 1].getElementsByTagName("td")[1];
+                    a = rows[i].getElementsByTagName("td")[0];
+                    b = rows[i + 1].getElementsByTagName("td")[0];
                     if (a.innerHTML.toLowerCase() > b.innerHTML.toLowerCase()) {
                         shouldS = true;
                         break;
@@ -181,7 +183,29 @@ $rezultat=Rezervacija::getAll($conn);
                 }
             }
         }
-        </script>
+
+
+        function nadji() {
+            var unos, filter, table, tr, td, i, txtValue;
+            unos = document.getElementById("ulaz");
+            filter = unos.value.toUpperCase();
+            table = document.getElementById("tabela");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        </script> 
+
 
 </body>
 </html>

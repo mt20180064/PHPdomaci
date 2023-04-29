@@ -28,10 +28,10 @@ session_start();
                 <li><a href="index.php">Prijavljivanje</a></li>
                 <li><a href="#">Početna</a> 
                 <li><a href="pregledrez.php">Pregled rezervacija</a></li>
-                
+                <li><a href="dodaj.php">Napravi rezervaciju</a></li>
                 
             </ul>
-<a class="btn" href="#"><button>Napravi rezervaciju</button></a>
+          
         </div>
     </nav>
     
@@ -49,14 +49,12 @@ session_start();
                  centuries.
                   Ignore this, we will work on the 
                  content later. This is a random 
-                 internet bullshit about lorem ipsum.
+                 internet stuff about lorem ipsum.
                   It was popularised
                    in the 1960s with the release 
                    of sth whatever Ok 
-                  so now gjfdgjdfo whatever 
-                  i write here
-                   i feel like an idiot so
-                    i should really stop.
+                  so now lets work on front end
+                  issues with this site.
         </p1>
               
 
@@ -89,11 +87,11 @@ session_start();
             <img class="primer" src="img\mm.jpg", alt="sto">
             <div>
             <h1>Prijatan i nezaboravan ambijent</h1>
-            <p1> gedfhadhfshgfsjsryjetdfbopfdbsfbsroprobndf
-                bfrodrpnodtpnjdt
-                njtfgmjgfmkfykmfykmygyf,kyt,gh,
-                hdfjtdjerodgsejpogsjpogwjwhporjphoh
-                hjopdrjspojspojkspokjpokhpodtkhpodktjpode
+            <p1> Uzivacete u ambijentu koji svakoga 
+              vraca nekoliko decenija unazad, kada je
+              topli obrok u porodici bio najvazniji 
+              deo dana i kada smo znali da uvek imamo 
+              gde da se vratimo! 
             </p1>
             <div>
             <form class="forma">
@@ -166,5 +164,7 @@ session_start();
 </footer>
 
 </footer>
+
+
 </body>
 </html>    

@@ -65,7 +65,7 @@ class Rezervacija{
 
     public static function add(Rezervacija $rezervacija, mysqli $conn)
     {
-        $query = "INSERT INTO rezervacija(gost, sala, sto, datum, vreme, brojljudi, user) VALUES('$rezervacija->gost','$rezervacija->sala','$rezervacija->sto','$rezervacija->datum','$rezervacija->vreme','$rezervacija->brojljudi','$rezervacija->user')";
+        $query = "INSERT INTO rezervacija(gost, sala, sto, datum, vreme, brojljudi,user) VALUES('$rezervacija->gost','$rezervacija->sala','$rezervacija->sto','$rezervacija->datum','$rezervacija->vreme','$rezervacija->brojljudi', 1)";
         return $conn->query($query);
     }
 }
