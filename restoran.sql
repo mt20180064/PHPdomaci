@@ -22,20 +22,27 @@ DROP TABLE IF EXISTS `rezervacija`;
 
 CREATE TABLE `rezervacija` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `gost` varchar(30) DEFAULT NULL,
-  `sala` varchar(30) DEFAULT NULL,
-  `sto` int(11) DEFAULT NULL,
+  `gost` varchar(30) NOT NULL,
+  `sala` varchar(30) NOT NULL,
+  `sto` int(11) NOT NULL,
   `datum` date DEFAULT NULL,
   `vreme` time DEFAULT NULL,
-  `broj ljudi` int(11) DEFAULT NULL,
+  `brojljudi` int(11) DEFAULT NULL,
   `user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `gost` (`gost`),
   KEY `user` (`user`),
   CONSTRAINT `user` FOREIGN KEY (`user`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `rezervacija` */
+
+insert  into `rezervacija`(`id`,`gost`,`sala`,`sto`,`datum`,`vreme`,`brojljudi`,`user`) values 
+(1,'Viktor Mihajlovic','2',14,'2023-05-19','19:30:00',7,1),
+(2,'Roko Todorovic','3',1,'2023-05-20','21:00:00',4,1),
+(3,'Beli Mackat','1',5,'2023-05-13','15:00:00',3,2),
+(22,'ewq','2',1,'2023-04-28','00:00:00',1,1),
+(25,'Atikus Fetch','3',4,'2023-05-03','13:36:00',1,1);
 
 /*Table structure for table `user` */
 
